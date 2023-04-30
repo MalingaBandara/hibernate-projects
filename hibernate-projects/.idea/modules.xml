@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../one-to-one-bidirectional/one-to-one-bidirectional.iml" filepath="$PROJECT_DIR$/../one-to-one-bidirectional/one-to-one-bidirectional.iml" />
       <module fileurl="file://$PROJECT_DIR$/../one-to-one-unidirectional/one-to-one-unidirectional.iml" filepath="$PROJECT_DIR$/../one-to-one-unidirectional/one-to-one-unidirectional.iml" />
     </modules>
   </component>
