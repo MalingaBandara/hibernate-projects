@@ -1,6 +1,7 @@
 package entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity ( name = "student_table" )
 public class Student {
@@ -15,12 +16,22 @@ public class Student {
 
     // ------------- mapping -----------------------
 
+    @OneToMany ( cascade = CascadeType.ALL  )
+    private List<Laptop> laptops;
+
     // ------------- mapping -----------------------
 
 
+    public List<Laptop> getLaptops() {
+        return laptops;
+    }
 
-                public Student() {
-                }
+    public void setLaptops(List<Laptop> laptops) {
+        this.laptops = laptops;
+    }
+
+
+                public Student() {}
 
                 public Student(long studentId, String studentName) {
                     this.studentId = studentId;
