@@ -9,24 +9,43 @@ public class AppInitializer {
 
     public static void main(String[] args) {
 
-    try (Session session = HibernateUtill.getSessionFactory().openSession()) {
+    /*try (Session session = HibernateUtill.getSessionFactory().openSession()) {
 
             Transaction transaction = session.beginTransaction();
 
                     Laptop laptop1 = new Laptop();
-                            laptop1.setBrand("Lenovo");
-
                     Laptop laptop2 = new Laptop();
-                            laptop2.setBrand("Mac");
 
                     Student student = new Student();
-                            student.setStudentName("Nimal");
+
+                    laptop1.setBrand("Lenovo");
+                        laptop1.setStudent( student );
+
+                    laptop2.setBrand("Mac");
+                        laptop2.setStudent( student );
+
+
+                    student.setStudentName("Nimal");
+
 
             student.setLaptops(Arrays.asList( laptop1, laptop2 ) );
 
             session.save(student);
 
             transaction.commit();
+        }*/
+
+        try(Session session = HibernateUtill.getSessionFactory().openSession()){
+
+            Student selectedStudent = session.get(Student.class, (long) 1);
+            System.out.println(selectedStudent.getStudentName());
+
+            System.out.println("================");
+
+            selectedStudent.getLaptops().stream()
+                    .forEach(e-> System.out.println(e.getBrand()));
+
+            System.out.println("================");
         }
 
     }

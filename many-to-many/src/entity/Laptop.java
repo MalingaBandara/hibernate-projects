@@ -16,20 +16,9 @@ public class Laptop {
 
     // ------------- mapping -----------------------
 
-    @ManyToOne
-    @JoinColumn ( name = "student_id" )
-    private Student student;
-
     // ------------- mapping -----------------------
 
 
-    public Student getStudent() {
-        return student;
-    }
-
-    public void setStudent(Student student) {
-        this.student = student;
-    }
 
                     public Laptop() {
                     }

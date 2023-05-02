@@ -16,22 +16,8 @@ public class Student {
 
     // ------------- mapping -----------------------
 
-    @OneToMany ( mappedBy = "student",
-            cascade = CascadeType.ALL ,
-            fetch = FetchType.EAGER
-        )
-    private List<Laptop> laptops;
-
     // ------------- mapping -----------------------
 
-
-    public List<Laptop> getLaptops() {
-        return laptops;
-    }
-
-    public void setLaptops(List<Laptop> laptops) {
-        this.laptops = laptops;
-    }
 
 
                 public Student() {}
